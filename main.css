@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
+/*To Do list:
+Переделать обращения с тегов на классы
+Переделать лендинг под макет PDS
+Найти на сторонних ресурсах как сделать адаптивным
+Найти/спросить/узнать как разобраться с косой линией*/
 html, body{
     font-family: 'Roboto', sans-serif;
     margin: 0px;
@@ -108,25 +113,25 @@ header p{
 }
 
 
-.block2{
+.Introduction{
     display: grid;
     grid-template-columns: 26% 26% 26%;
     margin-top: 20vh;
     margin-left: 39vh;
 }
-.block2-1, .block2-2, .block2-3{
+.Introduction-1, .Introduction-2, .Introduction-3{
     width: 300px;
     text-align: center;
 }
-.block2 img{
+.Introduction img{
     display: block;
     margin: auto;
 }
-.block2 h3{
+.Introduction h3{
     font-size: 3.5vh;
     font-weight: 900;
 }
-.block2 p{
+.Introduction p{
     font-size: 1.4vh;
     color: lightgrey;
 }
@@ -135,7 +140,7 @@ header p{
 }
 
 
-.block3 table{
+.Mowie-menu-Table table{
     border-collapse: collapse;
     color:white;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -145,7 +150,7 @@ header p{
     text-align: center;
     overflow: hidden;
 }
-.block3 a:hover{
+.Mowie-menu-Table a:hover{
     color:white;
 }
 #table_head{
