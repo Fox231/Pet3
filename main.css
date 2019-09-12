@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
 html, body{
     font-family: 'Roboto', sans-serif;
     margin: 0px;
@@ -24,19 +25,18 @@ header{
 header p{
     text-align: right;
     color: white;
+    margin-right: 58%;
 }
-header a{
-    margin-left: 2%;
-}
-.URLs{
+.URL{
     margin-top: 1.5vh;
     text-align: center;
 }
-header p{
-    margin-right: 58%;
+.URL-1{
+    margin-left: 2%;
 }
-header img{
+#logo{
     margin-left: 50%;
+    width: 20vh;
 }
 
 
@@ -46,7 +46,7 @@ header img{
     background-image: url(images/top_bg.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 1100px;
+    height: 100vh;
     margin: 0;
 }
 .heading h1,h2 {
@@ -59,20 +59,21 @@ header img{
 }
 .heading h2{
     font-size: 5vh;
+    font-weight: 400;
 }
 #heading1{
-    padding-top: 25vh;
+    padding-top: 23vh;
 }
 .heading:after {
     content: '';
     width: 0;
     height: 0;
     border-left: 0px solid transparent;
-    border-top: 120px solid transparent;
-    border-right: 2000px solid #fff;
+    border-top: 13vh solid transparent;
+    border-right: 200vh solid #fff;
     border-bottom: 0px solid #fff;
     position: absolute;
-    bottom: -35px;
+    bottom: 0vh;
     right: 0;
     z-index: 99;
 }
@@ -83,31 +84,35 @@ header img{
     grid-template-columns: 1fr 1fr;
 }
 .block1-1{
-    width: 600px;
-    padding: 10px;
-    border-color: black;
-    border-style: solid;
+    background-color: white;
+    position: absolute;
+    top: 87vh;
+    left: 50%;
+    width: 45vh;
+    padding: 30px;
     border-width: 1px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.block1-1 p{
-    color: grey;
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.7);
+    font-size: 1.5vh;
+    color: lightgrey;
 }
 .block1-1 h2{
     color: black;
+    font-size: 4vh;
 }
-.block1-2{
+#block1-2{
+    font-size: 5vh;
+    font-weight: 900;
     color: black;
-    text-align: bottom;
-    text-align: center;
-    height: 200px;
+    padding-top: 9vh;
+    margin-left: 39vh;
 }
 
 
 .block2{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 5%;
+    grid-template-columns: 26% 26% 26%;
+    margin-top: 20vh;
+    margin-left: 39vh;
 }
 .block2-1, .block2-2, .block2-3{
     width: 300px;
@@ -116,6 +121,17 @@ header img{
 .block2 img{
     display: block;
     margin: auto;
+}
+.block2 h3{
+    font-size: 3.5vh;
+    font-weight: 900;
+}
+.block2 p{
+    font-size: 1.4vh;
+    color: lightgrey;
+}
+#pict-fix{
+    margin-top: 3.1vh;
 }
 
 
@@ -136,12 +152,12 @@ header img{
     background-color: #A3CC40;
     height: 60px;
 }
-#table-1{
+.table-1{
     background-color: #4B4D4F;
 }
-#table-2{
+.table-2{
     background-color: #373737;
 }
-#checkbox{
+.checkbox{
     width: 40px;
 }
