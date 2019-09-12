@@ -1,72 +1,88 @@
 html, body{
     font-family: 'Roboto', sans-serif;
-    background-image: url(images/Bioscoopzaal_Solariskino.jpg);
-    background-size: 100%;
     margin: 0px;
 }
 a{
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 a:hover {
-    color: darkred; 
+    color: green; 
 }
 
 
-.header{
-    background-color: rgba(0, 0, 0, 0.5);
+header{
+    font-weight: lighter;
+    font-size: 1.5vh;
     display: grid;
-    grid-template-columns: 20% 1fr 20%;
-    margin-top: -20px;
-    padding: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5vh;
+    position: absolute;
+    width: 90%;
+    margin-left: 3%;
 }
-.header span{
-    text-decoration: underline;
-}
-.header p{
+header p{
     text-align: right;
     color: white;
 }
-.header a{
-    margin-left: 20px;
+header a{
+    margin-left: 2%;
 }
 .URLs{
-    margin-top: 15px;
+    margin-top: 1.5vh;
     text-align: center;
 }
-.header p, img{
-    padding-left: 100px;
-    padding-right: 100px;
+header p{
+    margin-right: 58%;
+}
+header img{
+    margin-left: 50%;
 }
 
 
 .heading{
-    margin-top: 330px;
     text-align: center;
     text-shadow: black 0 0 10px;
+    background-image: url(images/top_bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 1100px;
+    margin: 0;
 }
 .heading h1,h2 {
-    margin: 0px;
+    margin: 0;
     color: white;
 }
 .heading h1{
     font-weight: lighter;
-    font-size: 60px;
+    font-size: 8vh;
 }
 .heading h2{
-    font-size: 40px;
+    font-size: 5vh;
+}
+#heading1{
+    padding-top: 25vh;
+}
+.heading:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-top: 120px solid transparent;
+    border-right: 2000px solid #fff;
+    border-bottom: 0px solid #fff;
+    position: absolute;
+    bottom: -35px;
+    right: 0;
+    z-index: 99;
 }
 
 
 .block1{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 500px;
-    background-color: white;
-    clip-path: polygon(0 49%, 100% 0, 100% 100%, 0% 100%);
 }
 .block1-1{
-    background-color: white;
     width: 600px;
     padding: 10px;
     border-color: black;
@@ -85,4 +101,47 @@ a:hover {
     text-align: bottom;
     text-align: center;
     height: 200px;
+}
+
+
+.block2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 5%;
+}
+.block2-1, .block2-2, .block2-3{
+    width: 300px;
+    text-align: center;
+}
+.block2 img{
+    display: block;
+    margin: auto;
+}
+
+
+.block3 table{
+    border-collapse: collapse;
+    color:white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 16px;
+    border-radius: 20px;
+    border-spacing: 0;
+    text-align: center;
+    overflow: hidden;
+}
+.block3 a:hover{
+    color:white;
+}
+#table_head{
+    background-color: #A3CC40;
+    height: 60px;
+}
+#table-1{
+    background-color: #4B4D4F;
+}
+#table-2{
+    background-color: #373737;
+}
+#checkbox{
+    width: 40px;
 }
