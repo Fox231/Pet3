@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
 /*To Do list:
-Переделать обращения с тегов на классы
+Переделать обращения с тегов на классы и ID
 Переделать лендинг под макет PDS
-Найти на сторонних ресурсах как сделать адаптивным
-Найти/спросить/узнать как разобраться с косой линией*/
+Спиратить и работать через avcode
+Узнать про Flex
+Узнать и применить @media
+Узнать и применить viewport
+Переделать таблицу*/
 html, body{
     font-family: 'Roboto', sans-serif;
-    margin: 0px;
+    margin: 0px auto;
 }
 a{
     color: white;
@@ -80,7 +83,7 @@ header p{
     position: absolute;
     bottom: 0vh;
     right: 0;
-    z-index: 99;
+    z-index: 1px;
 }
 
 
@@ -94,7 +97,9 @@ header p{
     top: 87vh;
     left: 50%;
     width: 45vh;
+    height: 20.5vh;
     padding: 30px;
+    padding-top: 13px;
     border-width: 1px;
     box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.7);
     font-size: 1.5vh;
@@ -108,18 +113,18 @@ header p{
     font-size: 5vh;
     font-weight: 900;
     color: black;
-    padding-top: 9vh;
-    margin-left: 39vh;
+    padding-top: 5.5vh;
+    margin-left: 39.5vh;
 }
 
 
 .Introduction{
     display: grid;
     grid-template-columns: 26% 26% 26%;
-    margin-top: 20vh;
+    margin-top: 11.5vh;
     margin-left: 39vh;
 }
-.Introduction-1, .Introduction-2, .Introduction-3{
+.Introduction_block_1, .Introduction_block_2, .Introduction_block_3{
     width: 300px;
     text-align: center;
 }
@@ -140,29 +145,167 @@ header p{
 }
 
 
-.Mowie-menu-Table table{
+.Mowie-menu{
+    margin-left: 39.5vh;
+    width: 1000px;
+}
+#Mowie-menu-heading{
+    font-size: 5vh;
+    padding-left: 30.5vh;
+    padding-top: 2vh;
+    padding-bottom: 2.1vh;
+}
+.Mowie-menu table{
     border-collapse: collapse;
     color:white;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 16px;
+    font-size: 2.2vh;
     border-radius: 20px;
     border-spacing: 0;
-    text-align: center;
+    width: 102vh;
     overflow: hidden;
 }
-.Mowie-menu-Table a:hover{
+.Mowie-menu a:hover{
     color:white;
 }
 #table_head{
     background-color: #A3CC40;
-    height: 60px;
+    height: 78px;
+    font-size: 2.8vh;
 }
 .table-1{
     background-color: #4B4D4F;
+    height: 75px;
 }
 .table-2{
     background-color: #373737;
+    height: 75px;
 }
 .checkbox{
-    width: 40px;
+    width: 74px;
+}
+.first_column{
+    text-align: center;
+    width: 29.5vh;
+}
+#second_column{
+    text-align: left;
+}
+#Mowie-menu-text{
+    text-align: center;
+    font-size: 1.4vh;
+    width: 850px;
+    margin-left: 10%;
+    margin-top: 3.8vh;
+}
+
+
+.gifts{
+    background-image: url(images/b4_bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: white;
+    margin-top: 10vh;
+    height: 68vh;
+}
+.gifts-content{
+    text-align: right;
+    padding-top: 13vh;
+    margin-left: 65vh;
+    width: 76.5vh;
+    font-size: 1.4vh;
+    font-weight: 100;
+}
+#gifts-heading{
+    font-size: 5vh;
+}
+.gifts-conteiner{
+    margin-top: 6vh;
+    margin-left: 45vh;
+}
+#button{
+    transition: 0.3s;
+    background-color: #90D23D;
+    text-align: center;
+    border-radius: 14px;
+    border-spacing: 0;
+    padding: 2.7vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    font-size: 1.8vh;
+    font-weight: 500;
+    border-style: solid;
+    border-color: #90D23D;
+}
+#button:hover{
+    background: rgba(153, 255, 0, 0);
+    color: #90D23D;
+}
+#gifts-picture{
+    position: absolute;
+    bottom: -171vh;
+    left: 40vh;
+    border-radius: 50%;
+    border-spacing: 0;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
+}
+.gifts:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 2000px solid #fff;
+    border-top: 110px solid #fff;
+    border-right: 0vh solid transparent;
+    border-bottom: 100px solid transparent;
+    position: absolute;
+    bottom: -160vh;
+    right: 0;
+    z-index: 1px;
+}
+.gifts:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 2000px solid transparent;
+    border-top: 0px solid transparent;
+    border-right: 0px solid #fff;
+    border-bottom: 100px solid #fff;
+    position: absolute;
+    bottom: -131.5em;
+    right: 0;
+    z-index: 1px;
+}
+
+
+.Films_logos_content{
+    margin-left: 23.4%;
+    margin-top: 4%;
+    display: grid;
+    grid-template-rows: 21em 21em 21em;
+    grid-template-columns: 21em 21em 21em;
+}
+.Films_logos_text_positioning{
+    margin-top: 7%;
+    margin-left: 23.3%;
+}
+.Films_logos_heading{
+    font-size: 3em;
+    margin-bottom: 2.5%;
+}
+.Films_logos_text{
+    width: 50%;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+
+
+.map{
+    margin-top: 4em;
+}
+footer{
+    background-color: #90D23D;
+    margin-top: 0px;
+    color: white;
+    font-weight: 100;
 }
