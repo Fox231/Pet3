@@ -1,11 +1,81 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
 
 html body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
     min-width: 320px;
-    text-align: 20px;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+button {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -19,18 +89,95 @@ a:hover {
 
 .content {
     display: block;
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 75rem;
+    width: 65rem;
 }
 
-header {
+
+.block1 {
+    background: url(images/top_bg.jpg) no-repeat top center / cover;
     position: relative;
-    text-align: center;
-    background-image: url(images/top_bg.jpg);
-    min-height: 20rem;
-    height: 62.5rem;
+    overflow: hidden;
     color: white;
+    min-height: 100vh;
+}
+
+.block1__row {
+    overflow: hidden;
+    margin: 0 -0.75rem;
+}
+
+.block1__row>div {
+    padding: 0 0.75rem;
+    float: left;
+    min-height: 1px;
+}
+
+.block1__col1 {
+    width: 25%;
+}
+
+.block1__col2 {
+    width: 50%;
+}
+
+.block1__col3 {
+    width: 25%;
+}
+
+.block1__col3 p {
+    padding: 1.1rem 0 0;
+}
+
+.block1__col3 span {
+    font-size: 0.75rem;
+    font-weight: 100;
+}
+
+.block1__col3 a {
+    font-size: 0.75rem;
+    font-weight: 100;
+    border-bottom: 1px solid white;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.URL {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.URL-1 {
+    font-weight: 100;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-left: 1rem;
+}
+
+.URL {
+    margin-top: 0;
+    display: block;
+    padding: 1.1rem 0 0;
+}
+
+.URL li {
+    display: inline-block;
+}
+
+
+header {
+    padding: 2rem 0 0;
+}
+
+
+.conteiner {
+    max-width: 53rem;
+    margin: 0 auto;
+    padding: 0 0.75rem;
 }
 
 .header__top {
@@ -50,43 +197,37 @@ header {
     letter-spacing: 0.6px;
 }
 
-.URL {
-    text-align: center;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.URL-1 {
-    margin-left: 1rem;
-    letter-spacing: 0.85px;
-}
 
 .logo__conteinter {
     width: 1.2rem;
 }
 
 .logo {
-    width: 12.5rem;
-    margin-left: -26.4rem;
+    width: 9.4rem;
 }
 
 .header__headings h1 {
-    font-weight: lighter;
-    font-size: 5rem;
-    margin-bottom: -2.7rem;
-    letter-spacing: .2px;
+    font-weight: 100;
+    font-size: 4rem;
+    margin: 0 0 0.5rem;
+    line-height: 1;
 }
 
 .header__headings h2 {
-    font-size: 3.21rem;
+    font-size: 2.5rem;
     font-weight: 400;
-    letter-spacing: -.5px;
+    line-height: 1;
 }
 
 .header__headings {
     padding-top: 10.5rem;
+    padding: 7.5rem 0 12.5rem;
 }
+
+.text-center {
+    text-align: center;
+}
+
 
 header:after {
     content: '';
@@ -108,11 +249,10 @@ header:after {
     background-color: white;
     position: absolute;
     top: -10.2rem;
-    left: 37.5rem;
-    width: 28.125rem;
-    height: 14.5625rem;
-    padding: 2.0625rem 2.0625rem 2.0625rem 2.0625rem ;
-    padding-top: 0;
+    left: 32.8rem;
+    width: 32.2rem;
+    height: 16.8rem;
+    padding: 2.0625rem;
     border-width: 1px;
     box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.7);
     font-size: 0.86rem;
@@ -125,10 +265,12 @@ header:after {
     letter-spacing: .5px;
     margin-bottom: 1.7rem;
 }
-.Intro__text{
+
+.Intro__text {
     padding-right: 3rem;
 }
-.Intro__text p{
+
+.Intro__text p {
     margin-bottom: 1.25rem;
 }
 
@@ -136,14 +278,15 @@ header:after {
     font-size: 3.1rem;
     font-weight: 900;
     color: black;
-    padding: 2.55rem 0 0 5.3rem;
+    padding: 2.55rem 0 0 0;
+    margin-bottom: 7.7rem;
 }
 
 
 .Infoblocks {
     display: flex;
     justify-content: center;
-    margin-top: 7.7rem;
+    margin-bottom: 3rem;
 }
 
 .Infoblocks__conteiner {
@@ -165,27 +308,23 @@ header:after {
 }
 
 .Infoblocks h3 {
-    font-size: 2.2em;
+    font-size: 2.2rem;
     font-weight: 900;
 }
 
-.Infoblocks p {
-    font-size: 0.9em;
+.Infoblocks__text {
+    font-size: 0.9rem;
     color: lightgrey;
-    margin-top: -1.125rem;
 }
 
 
 .Mowie-menu {
-    width: 62.5rem;
-    margin-left: 5.3rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .Mowie-menu-heading {
     font-size: 3.125rem;
-    padding-left: 19.25rem;
-    padding-top: 3.125rem;
-    padding-bottom: 0.625rem;
 }
 
 .Mowie-menu table {
@@ -194,7 +333,7 @@ header:after {
     font-size: 1.125rem;
     border-radius: 0.75rem;
     border-spacing: 0;
-    width: 64.375rem;
+    width: 100%;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
 }
@@ -232,28 +371,24 @@ input[type='checkbox'] {
 
 td.checkbox span {
     display: block;
-    background: url(images/Moreicon.svg) no-repeat 100%;
+    background: url(images/Moreicon.svg);
     width: 2.0625rem;
     height: 2.0625rem;
 }
 
 .first_column {
-    text-align: center;
     width: 12.5em;
 }
 
-
-#second_column {
+.second_column {
     text-align: left;
     width: 15.4em;
 }
 
-#Mowie-menu-text {
-    text-align: center;
+.Mowie-menu-text {
     font-size: 0.875rem;
-    width: 53.125rem;
-    margin-left: 10%;
     margin-top: 1.875rem;
+    /*поправить это*/
     color: lightgrey;
 }
 
@@ -261,29 +396,37 @@ td.checkbox span {
 .gifts {
     position: relative;
     background-image: url(images/b4_bg.jpg);
-    background-size: 125rem;
-    background-position-y: -18.75rem;
+    background-size: 130rem;
+    background-repeat: no-repeat;
+    background-position: center;
     background-repeat: cover;
     color: white;
     margin-top: 9.375rem;
-    height: 43.125rem;
+    /*поправить это*/
+    height: 39rem;
 }
 
-.gifts-content {
+.gifts__content {
     text-align: right;
-    padding-top: 5.8rem;
-    margin-left: 25.8rem;
+    padding-top: 10rem;
+    margin-left: 21.3rem;
     width: 43.75rem;
     font-size: 0.85rem;
     font-weight: 100;
 }
 
-#gifts-heading {
+.gifts__heading {
     font-size: 3.125rem;
+    margin-bottom: 1rem;
+}
+
+.gifts__text {
+    margin-bottom: 1rem;
 }
 
 .gifts-conteiner {
     margin-top: 2.5rem;
+    /*поправить это*/
     margin-left: 30em;
 }
 
@@ -311,7 +454,7 @@ td.checkbox span {
     position: absolute;
     width: 20.5em;
     top: -3.7em;
-    left: 5.3rem;
+    left: 1.3rem;
     border-radius: 50%;
     border-spacing: 0;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
@@ -345,7 +488,7 @@ td.checkbox span {
 
 
 .Films_logos {
-    margin: 3.5rem 0 6.25rem 7rem;
+    margin: 3.5rem 0 6.25rem 0rem;
 }
 
 .Films_logos_heading {
@@ -367,7 +510,7 @@ td.checkbox span {
 .Films_logos_conteiner {
     display: flex;
     flex-wrap: wrap;
-    max-width: 62.5rem;
+    width: 65rem;
     margin: 0 -1.125rem;
 }
 
@@ -421,6 +564,7 @@ td.checkbox span {
 footer {
     background-color: #90D23D;
     margin-top: -0.25rem;
+    /*поправить это*/
     height: 13.5625rem;
 }
 
@@ -436,8 +580,4 @@ footer {
     color: white;
     font-weight: 100;
     text-align: center;
-}
-
-.footer_text_2 {
-    margin-top: -0.9375rem;
 }
