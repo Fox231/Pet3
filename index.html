@@ -6,9 +6,11 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width" , initial-scale=1>
     <title>Киноотеатры в Казани | Заказать билеты</title>
-    <meta name="description" content=" ВСТАВИТЬ СЮДА ТЕКСТ ">
+    <meta name="description" content=""><!-- ВСТАВИТЬ СЮДА ТЕКСТ -->
     <link rel='stylesheet' type='text/css' href='main.css'>
     <link rel='stylesheet' type='text/css' href='media.css'>
+    <link rel='stylesheet' type='text/css' href='icons.css'>
+    <link rel='stylesheet' type='text/css' href='css/stacktable.css'>
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 </head>
@@ -101,7 +103,7 @@
         </div>
         <div class="Mowie-menu">
             <h3 class="Mowie-menu-heading text-center">Выберите фильм</h3>
-            <table>
+            <table id="filmsHire">
                 <thead>
                     <tr id="table_head">
                         <th></th>
@@ -115,7 +117,7 @@
                                 </svg>
                             </a></th>
                         <th class="simple-text">Жанр</th>
-                    <tr class="table-1">
+                        <!-- <tr class="table-1">
                         <td class="checkbox">
                             <input type="checkbox">
                             <span>
@@ -154,7 +156,7 @@
                         <td class="first_column text-center simple-text" id="film_time_3"><span></span></td>
                         <td class="simple-text"><a href="" id="film_name_3"></a></td>
                         <td class="simple-text" id="film_gener_3"></td>
-                    </tr>
+                    </tr> -->
                 </thead>
             </table>
             <p class="Mowie-menu-text text-center simple-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -186,7 +188,7 @@
                     excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi
                     sint, tenetur unde velit veniam!</p>
                 <div class="gifts-conteiner">
-                    <a href="" id="button">Получить подарок</a>
+                    <button id="sendInfo" class="button">Получить подарок</button>
                 </div>
             </div>
         </div>
@@ -1408,14 +1410,77 @@
         </div>
     </footer>
 
-    <script src="js/Films.js"></script>
 
+    <div id="modalPresent">
+
+        <div class="modal">
+            <button id="closeModalPresent">X</button>
+            <form action="">
+                <div class="modal__form">
+                    <div class="input-wrap">
+                        <input type="text" placeholder="Имя*" required name="" id="guest-name" class="input-text">
+                    </div>
+                    <div class="input-wrap">
+                        <select name="" id="guest_select" class="input-text input-select">
+                            <option value="1">Выбор1</option>
+                            <option value="2">Выбор2</option>
+                            <option value="3">Выбор3</option>
+                        </select>
+                    </div>
+                    <!-- <div class="input-wrap">
+                        <div class="radio-wrap">
+                            <input type="radio" id="radio1" placeholder="Имя*" required name="radio1"
+                                class="input-radio">
+                            <label for="radio1"><span></span>Выбор1</label>
+                        </div>
+                        <div class="radio-wrap">
+                            <input type="radio" id="radio2" placeholder="Имя*" required name="radio1"
+                                class="input-radio">
+                            <label for="radio2"><span></span>Выбор2</label>
+                        </div>
+                    </div>
+                    <div class="input-wrap">
+                        <textarea placeholder="Комментарий" name="" class="input-text input-textarea"></textarea>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="checkbox" id="checkbox1" placeholder="Имя*" required name=""
+                            class="input-checkbox">
+                        <label for="checkbox1"><i class="icon icon-check" title="check"></i> Я согласен на обработку
+                            персональных данных</label>
+                    </div>
+                    <div class="input-wrap">
+                        <div class="input-file-wrap">
+                            <input type="file" id="file1" class="input-file">
+                            <label for="file1">Загрузить файл</label>
+                        </div>
+                    </div>
+                    <div class="input-wrap">
+                        <a href="#" class="input-plus"><i class="icon icon-add-alt" title="add-alt"></i></a>
+                    </div>
+                    <div class="input-wrap">
+                        <a href="#" class="input-minus"><i class="icon icon-cross-alt" title="cross-alt"></i></a>
+                    </div> -->
+                    <div class="input-wrap">
+                        <button id="sendForm" class="button1">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="js/Films.js"></script>
+    <script src="js/getPresentInfo.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/stacktable.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script>
         $(document).ready(function () {
-            $(".owl-carousel").owlCarousel();
-        });
+                $(".owl-carousel").owlCarousel();
+                $(".Mowie-menu table").stacktable();
+            }
+
+        );
     </script>
 
 </body>

@@ -83,6 +83,12 @@ a {
     text-decoration: none;
 }
 
+input, textarea, select {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    outline: 0;
+}
+
 a:hover {
     color: green;
 }
@@ -430,7 +436,8 @@ td.checkbox span {
     margin-left: 30em;
 }
 
-#button {
+.button {
+    color: white;
     background-color: #90D23D;
     border-color: #90D23D;
     border-radius: 0.9375rem;
@@ -445,7 +452,7 @@ td.checkbox span {
     transition: 0.3s;
 }
 
-#button:hover {
+.button:hover {
     background: rgba(153, 255, 0, 0);
     color: #90D23D;
 }
@@ -581,3 +588,207 @@ footer {
     font-weight: 100;
     text-align: center;
 }
+
+.input-wrap {
+    margin: 0 0 2rem;
+  }
+  
+  .input-text {
+    font-size: 1.188em;
+    color: #6c6c6c;
+    padding: .7rem .5vw;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    width: 100%;
+    transition: .2s;
+  }
+  
+  .input-text:focus {
+    border-color: #90d23d;
+  }
+  
+  .modal__form {
+    max-width: 100%;
+    padding: 2.5rem 1.25vw;
+  }
+  
+  .input-text::-webkit-input-placeholder {
+    color: #bebebe;
+  }
+  
+  .input-text::-moz-placeholder {
+    color: #bebebe;
+  }
+  
+  .input-text:-moz-placeholder {
+    color: #bebebe;
+  }
+  
+  .input-text:-ms-input-placeholder {
+    color: #bebebe;
+  }
+  
+  .input-checkbox {
+    display: none;
+  }
+  
+  .input-checkbox+label {
+    font-size: 1em;
+    padding-left: 1.15vw;
+    position: relative;
+    padding-top: 0.3em;
+  }
+  
+  .input-checkbox+label i {
+    position: absolute;
+    display: none;
+    font-size: .75em;
+    left: .1vw;
+    top: .3rem;
+    color: #90d23d;
+  }
+  
+  .input-checkbox:checked+label i {
+    display: block;
+  }
+  
+  .radio-wrap {
+    margin: 0 0 1rem;
+  }
+  
+  .input-radio {
+    display: none;
+  }
+  
+  .input-radio+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: .875em;
+    height: .875em;
+    border-radius: 100%;
+    border: 1px solid #000;
+  }
+  
+  .input-radio+label {
+    font-size: 1em;
+    padding-left: 1.15vw;
+    position: relative;
+    padding-top: 0.3em;
+  }
+  
+  .input-radio+label span {
+    position: absolute;
+    height: .5em;
+    width: .5em;
+    border-radius: 100%;
+    left: .25em;
+    top: .3125em;
+    background: #90d23d;
+    display: none;
+  }
+  
+  .input-radio:checked+label span {
+    display: block;
+  }
+  
+  .input-checkbox+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: .1rem;
+    width: .875em;
+    height: .875em;
+    border: 1px solid #000;
+  }
+  
+  .input-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/down-arrow.svg") 96% center / 5% no-repeat #fff;
+  }
+  
+  .input-textarea {
+    height: 10rem;
+    resize: none;
+  }
+  
+  .input-plus {
+    font-size: 1.875em;
+    color: #90d23d;
+  }
+  
+  .input-minus {
+    font-size: 1.875em;
+    color: #f0652a;
+  }
+  
+  .input-file-wrap {
+    position: relative;
+  }
+  
+  .input-file {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    z-index: 1;
+    box-shadow: none;
+    border: 0;
+  }
+  
+  .input-file+label {
+    font-size: 1.125em;
+    color: #90d23d;
+    position: relative;
+    border: 1px solid #90d23d;
+    padding: 0.7rem .75vw;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .button1 {
+    display: inline-block;
+    background: #90d23d;
+    color: #ffffff;
+    padding: 0.7rem 1.5vw;
+    border-radius: 12px;
+    font-size: 1.125em;
+    transition: .2s;
+    border: 2px solid #90d23d;
+    cursor: pointer;
+  }
+
+  #modalPresent{
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      padding-top: 6rem;
+  }
+
+  #modalPresent .modal{
+    background: #fff;  
+    margin: 0 auto;
+    width: 30rem;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  #closeModalPresent {
+      position: absolute;
+      font-size: 20px;
+      right: 1rem;
+      top: 0.5rem;
+      cursor: pointer;
+  }
