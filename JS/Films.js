@@ -43,8 +43,7 @@ let places = []
 for (i = 0; i < hall; i++) {
     places[i] = {}
     places[i]['number'] = i
-    if (i <= 3 || i >= 8 && i <= 13 || i >= 18) places[i]['price'] = 100
-    else places[i]['price'] = 150
+    places[i]['price'] = 100
     let randomBrone = Math.floor(Math.random() * Math.floor(2))
     if (randomBrone == 0) places[i]['brone'] = true
     else places[i]['brone'] = false
