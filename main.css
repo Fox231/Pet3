@@ -83,7 +83,9 @@ a {
     text-decoration: none;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     outline: 0;
@@ -329,6 +331,11 @@ header:after {
     margin-right: auto;
 }
 
+.Mowie-menu tr:hover td {
+    color: darksalmon;
+    cursor: pointer;
+}
+
 .Mowie-menu-heading {
     font-size: 3.125rem;
 }
@@ -342,10 +349,6 @@ header:after {
     width: 100%;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
-}
-
-.Mowie-menu a:hover {
-    color: white;
 }
 
 #table_head {
@@ -591,9 +594,9 @@ footer {
 
 .input-wrap {
     margin: 0 0 2rem;
-  }
-  
-  .input-text {
+}
+
+.input-text {
     font-size: 1.188em;
     color: #6c6c6c;
     padding: .7rem .5vw;
@@ -601,66 +604,66 @@ footer {
     border-radius: 5px;
     width: 100%;
     transition: .2s;
-  }
-  
-  .input-text:focus {
+}
+
+.input-text:focus {
     border-color: #90d23d;
-  }
-  
-  .modal__form {
+}
+
+.modal__form {
     max-width: 100%;
     padding: 2.5rem 1.25vw;
-  }
-  
-  .input-text::-webkit-input-placeholder {
+}
+
+.input-text::-webkit-input-placeholder {
     color: #bebebe;
-  }
-  
-  .input-text::-moz-placeholder {
+}
+
+.input-text::-moz-placeholder {
     color: #bebebe;
-  }
-  
-  .input-text:-moz-placeholder {
+}
+
+.input-text:-moz-placeholder {
     color: #bebebe;
-  }
-  
-  .input-text:-ms-input-placeholder {
+}
+
+.input-text:-ms-input-placeholder {
     color: #bebebe;
-  }
-  
-  .input-checkbox {
+}
+
+.input-checkbox {
     display: none;
-  }
-  
-  .input-checkbox+label {
+}
+
+.input-checkbox+label {
     font-size: 1em;
     padding-left: 1.15vw;
     position: relative;
     padding-top: 0.3em;
-  }
-  
-  .input-checkbox+label i {
+}
+
+.input-checkbox+label i {
     position: absolute;
     display: none;
     font-size: .75em;
     left: .1vw;
     top: .3rem;
     color: #90d23d;
-  }
-  
-  .input-checkbox:checked+label i {
+}
+
+.input-checkbox:checked+label i {
     display: block;
-  }
-  
-  .radio-wrap {
+}
+
+.radio-wrap {
     margin: 0 0 1rem;
-  }
-  
-  .input-radio {
+}
+
+.input-radio {
     display: none;
-  }
-  
-  .input-radio+label:before {
+}
+
+.input-radio+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -669,16 +672,16 @@ footer {
     height: .875em;
     border-radius: 100%;
     border: 1px solid #000;
-  }
-  
-  .input-radio+label {
+}
+
+.input-radio+label {
     font-size: 1em;
     padding-left: 1.15vw;
     position: relative;
     padding-top: 0.3em;
-  }
-  
-  .input-radio+label span {
+}
+
+.input-radio+label span {
     position: absolute;
     height: .5em;
     width: .5em;
@@ -687,13 +690,13 @@ footer {
     top: .3125em;
     background: #90d23d;
     display: none;
-  }
-  
-  .input-radio:checked+label span {
+}
+
+.input-radio:checked+label span {
     display: block;
-  }
-  
-  .input-checkbox+label:before {
+}
+
+.input-checkbox+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -701,35 +704,35 @@ footer {
     width: .875em;
     height: .875em;
     border: 1px solid #000;
-  }
-  
-  .input-select {
+}
+
+.input-select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background: url("../images/down-arrow.svg") 96% center / 5% no-repeat #fff;
-  }
-  
-  .input-textarea {
+}
+
+.input-textarea {
     height: 10rem;
     resize: none;
-  }
-  
-  .input-plus {
+}
+
+.input-plus {
     font-size: 1.875em;
     color: #90d23d;
-  }
-  
-  .input-minus {
+}
+
+.input-minus {
     font-size: 1.875em;
     color: #f0652a;
-  }
-  
-  .input-file-wrap {
+}
+
+.input-file-wrap {
     position: relative;
-  }
-  
-  .input-file {
+}
+
+.input-file {
     position: absolute;
     opacity: 0;
     width: 1px;
@@ -737,9 +740,9 @@ footer {
     z-index: 1;
     box-shadow: none;
     border: 0;
-  }
-  
-  .input-file+label {
+}
+
+.input-file+label {
     font-size: 1.125em;
     color: #90d23d;
     position: relative;
@@ -751,9 +754,9 @@ footer {
     display: block;
     cursor: pointer;
     border-radius: 5px;
-  }
-  
-  .button1 {
+}
+
+.button1 {
     display: inline-block;
     background: #90d23d;
     color: #ffffff;
@@ -763,32 +766,59 @@ footer {
     transition: .2s;
     border: 2px solid #90d23d;
     cursor: pointer;
-  }
+}
 
-  #modalPresent{
-      display: none;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      top: 0;
-      right: 0;
-      z-index: 1000;
-      padding-top: 6rem;
-  }
+#modalPresent,
+#orderForm {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding-top: 6rem;
+}
 
-  #modalPresent .modal{
-    background: #fff;  
+#modalPresent .modal,
+#orderForm .modal {
+    background: #fff;
     margin: 0 auto;
     width: 30rem;
     border-radius: 10px;
     position: relative;
-  }
+}
 
-  #closeModalPresent {
-      position: absolute;
-      font-size: 20px;
-      right: 1rem;
-      top: 0.5rem;
-      cursor: pointer;
-  }
+#closeModalPresent,
+#closeOrderForm {
+    position: absolute;
+    font-size: 20px;
+    right: 1rem;
+    top: 0.5rem;
+    cursor: pointer;
+}
+
+.places {
+    display: flex;
+    margin: 30px;
+}
+
+.placeDiv {
+    width: 50px;
+    height: 50px;
+    font-size: 23px;
+    font-weight: bold;
+    border: 2px solid #000;
+    margin-right: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.placeBrone {
+    background: orange;
+}
+
+.placeFree {
+    background: greenyellow;
+}

@@ -117,46 +117,7 @@
                                 </svg>
                             </a></th>
                         <th class="simple-text">Жанр</th>
-                        <!-- <tr class="table-1">
-                        <td class="checkbox">
-                            <input type="checkbox">
-                            <span>
-                            </span>
-                        </td>
-                        <td class="first_column text-center simple-text" id="film_time_0"><span></span></td>
-                        <td class="simple-text"><a href="" id="film_name_0"></a></td>
-                        <td class="simple-text" id="film_gener_0"></td>
-                    </tr>
-                    <tr class="table-2">
-                        <td class="checkbox">
-                            <input type="checkbox">
-                            <span>
-                            </span>
-                        </td>
-                        <td class="first_column text-center simple-text" id="film_time_1"><span></span></td>
-                        <td class="simple-text"><a href="" id="film_name_1"></a></td>
-                        <td class="simple-text" id="film_gener_1"></td>
-                    </tr>
-                    <tr class="table-1">
-                        <td class="checkbox">
-                            <input type="checkbox">
-                            <span>
-                            </span>
-                        </td>
-                        <td class="first_column text-center simple-text" id="film_time_2"><span></span></td>
-                        <td class="simple-text"><a href="" id="film_name_2"></a></td>
-                        <td class="simple-text" id="film_gener_2"></td>
-                    </tr>
-                    <tr class="table-2">
-                        <td class="checkbox">
-                            <input type="checkbox">
-                            <span>
-                            </span>
-                        </td>
-                        <td class="first_column text-center simple-text" id="film_time_3"><span></span></td>
-                        <td class="simple-text"><a href="" id="film_name_3"></a></td>
-                        <td class="simple-text" id="film_gener_3"></td>
-                    </tr> -->
+                        <th class="simple-text">Цена</th>
                 </thead>
             </table>
             <p class="Mowie-menu-text text-center simple-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1468,19 +1429,67 @@
         </div>
     </div>
 
+    <div id="orderForm">
+        <div class="modal">
+            <button id="closeOrderForm">X</button>
+            <div class="modal__form">
+                <div>
+                    <span>Название фильма:</span>
+                    <span id="orderFilmName"></span>
+                </div>
+                <div>
+                    <span>Начало сеанса:</span>
+                    <span id="orderFilmStart"></span>
+                </div>
+                <div>
+                    <span>Жанр:</span>
+                    <span id="orderFilmGanar"></span>
+                </div>
+                <div>
+                    <span>Цена:</span>
+                    <span id="orderFilmPrice"></span>
+                </div>
+                <div>
+                    <span>Количество билетов:</span>
+                    <input type="number" value="1" step="1" id="orderFilmCountTicket">
+                </div>
+                <div>
+                    <span>Общая стоимость:</span>
+                    <span id="orderFilmTotalPrice"></span>
+                </div>
+                <div>
+                    <span>Телефон:</span>
+                    <input type="tel" pattern="3[0-9] {3}-[0-9]{3}" id="orderFilmPhone">
+                </div>
+                <div>
+                    <span>Имя:</span>
+                    <input type="text" id="orderClientName">
+                </div>
+                <div>
+                    <span>Выбранное место:</span>
+                    <input type="number" id="PlaceChoice">
+                </div>
+                <div class="input-wrap">
+                    <button id="sendOrder" class="button1">Отправить</button>
+                </div>
+                <div class="places">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="js/Films.js"></script>
     <script src="js/getPresentInfo.js"></script>
-    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/stacktable.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script>
         $(document).ready(function () {
-                $(".owl-carousel").owlCarousel();
-                $(".Mowie-menu table").stacktable();
-            }
-
-        );
+            $(".owl-carousel").owlCarousel();
+            $(".Mowie-menu table").stacktable();
+        });
     </script>
 
 </body>
