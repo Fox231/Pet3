@@ -180,8 +180,6 @@ a:hover {
 header {
     padding: 2rem 0 0;
 }
-
-
 .conteiner {
     max-width: 53rem;
     margin: 0 auto;
@@ -769,7 +767,9 @@ footer {
 }
 
 #modalPresent,
-#orderForm {
+#orderForm,
+#choose_city
+ {
     display: none;
     position: fixed;
     width: 100%;
@@ -782,7 +782,8 @@ footer {
 }
 
 #modalPresent .modal,
-#orderForm .modal {
+#orderForm .modal,
+#choose_city .modal {
     background: #fff;
     margin: 0 auto;
     width: 30rem;
@@ -791,7 +792,8 @@ footer {
 }
 
 #closeModalPresent,
-#closeOrderForm {
+#closeOrderForm,
+#closeCityCoosing {
     position: absolute;
     font-size: 20px;
     right: 1rem;
@@ -813,6 +815,7 @@ footer {
     margin-right: 5px;
     text-align: center;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 .placeBrone {
@@ -821,4 +824,8 @@ footer {
 
 .placeFree {
     background: greenyellow;
+}
+
+#choose_city{
+    display: none;
 }

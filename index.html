@@ -16,10 +16,9 @@
 </head>
 
 <body>
-
     <div class="block1">
         <div class="conteiner">
-            <header>
+            <header id="header">
                 <div class="block1__row">
                     <div class="block1__col1">
                         <a href="http://university.innopolis.ru ">
@@ -29,15 +28,15 @@
                     <div class="block1__col2">
                         <nav class="URL">
                             <ul>
-                                <li><a href="" class="URL-1 simple-text">ЗАКАЗАТЬ БИЛЕТ</a></li>
-                                <li><a href="" class="URL-1 simple-text">ПРЕИМУЩЕСТВА</a></li>
-                                <li><a href="" class="URL-1 simple-text">ФИЛЬМЫ</a></li>
-                                <li><a href="" class="URL-1 simple-text">КОНТАКТЫ</a></li>
+                                <li><a href="#booking" class="URL-1 simple-text link-menu">ЗАКАЗАТЬ БИЛЕТ</a></li>
+                                <li><a href="#advantages" class="URL-1 simple-text link-menu">ПРЕИМУЩЕСТВА</a></li>
+                                <li><a href="#filmsling" class="URL-1 simple-text link-menu">ФИЛЬМЫ</a></li>
+                                <li><a href="#contacts" class="URL-1 simple-text link-menu">КОНТАКТЫ</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="block1__col3 text-right">
-                        <p class="simple-text"><span>Ваш город:</span> <a href="">Казань</a></p>
+                        <p class="simple-text"><span>Ваш город:</span> <a id="city_name" href=""></a></p>
                     </div>
                 </div>
             </header>
@@ -49,7 +48,7 @@
     </div>
 
     <div class="content">
-        <div class="Intro">
+        <div id="advantages" class="Intro">
             <div class="Intro__welcome">
                 <div class="Intro__welcome__content"></div>
                 <h2 class="Intro__welcome__header">Добро пожаловать!</h2>
@@ -101,7 +100,7 @@
                     vero voluptates.</p>
             </div>
         </div>
-        <div class="Mowie-menu">
+        <div id="booking" class="Mowie-menu">
             <h3 class="Mowie-menu-heading text-center">Выберите фильм</h3>
             <table id="filmsHire">
                 <thead>
@@ -156,8 +155,7 @@
     </div>
 
     <div class="content">
-        <div class="Films_logos">
-
+        <div id="filmsling" class="Films_logos">
             <h3 class="Films_logos_heading">Фильмы</h3>
             <p class="Films_logos_text simple-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
                 adipisci alias,
@@ -1230,7 +1228,7 @@
         </div>
     </div>
 
-    <div>
+    <div id="contacts">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1120.5723791233092!2d49.149941289709496!3d55.82544667049655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415eb2af81a73f59%3A0x32e6cfa5bb586776!2sXL!5e0!3m2!1sru!2sru!4v1568804648265!5m2!1sru!2sru"
             width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
@@ -1478,13 +1476,50 @@
             </div>
         </div>
     </div>
-
+    <div id="choose_city">
+        <div class="modal">
+            <button id="closeCityCoosing">X</button>
+            <form action="">
+                <fieldset>
+                    <div class="modal__form">
+                        <div class="input-wrap">
+                            <input type="text" name="city_choose">
+                        </div>
+                        <div id="search_result">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="js/Films.js"></script>
     <script src="js/getPresentInfo.js"></script>
     <script src="js/stacktable.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#up').on('click', function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500)
+                return false
+            })
+            $('.link-menu').on('click', function () {
+                let elementClick = $(this).attr("href")
+                let destination = $(elementClick).offset().top
+                $('html').animate({
+                    scrollTop: destination
+                }, 1500)
+                return false
+            })
+            let header = $('#header')
+            let scrollPrev = 0
+
+        })
+    </script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/ajax.js"></script>
     <script>
         $(document).ready(function () {
             $(".owl-carousel").owlCarousel();
