@@ -8,8 +8,8 @@ document.getElementById('closeModalPresent').onclick = function () {
     document.getElementById('modalPresent').style.display = 'none'
 }
 
-document.getElementById('sendForm').onclick = function(){
-form[name] = document.getElementById('guest-name').value
-form[choise] = document.getElementById('guest_select').value
-console.log(form)
-}
+// document.getElementById('sendForm').onclick = function(){
+// form[name] = document.getElementById('guest-name').value
+// form[choise] = document.getElementById('guest_select').value
+// console.log(form)
+// }
