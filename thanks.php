@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php if (isset($_GET['name'])) { ?>
+    <?php if (isset($_GET['name']) && isset($_GET['$id'])) { ?>
         Спасибо, <?php echo $_GET['name'] ?>. Ваша заявка получена.
     <?php } else { ?>
         <script>

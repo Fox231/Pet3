@@ -1262,6 +1262,9 @@
                         <?php } ?>
                     </div>
                     <div class="input-wrap">
+                        <input type="tel" placeholder="Телефон*" id="guest-name" class="input-text" name="phone" value=" <?php echo isset($_COOKIE['phone']) ? $_COOKIE['phone'] : '' ?>">
+                    </div>
+                    <!-- <div class="input-wrap">
                         <select name="cinema" id="guest_select" class="input-text input-select">
                             <option value="1">Зал 1</option>
                             <option value="2">Зал 2</option>
@@ -1285,7 +1288,7 @@
                         <input type="checkbox" id="checkbox1" class="input-checkbox" name="agree">
                         <label for="checkbox1"><i class="icon icon-check" multiple title="check"></i> Я согласен на обработку
                             персональных данных</label>
-                    </div>
+                    </div> -->
                     <div class="input-wrap">
                         <div class="input-file-wrap">
                             <input type="file" id="file1" class="input-file" name="file">
