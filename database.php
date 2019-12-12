@@ -1,43 +1,65 @@
 <?php
-class dataBase
+class Datacontroller
 {
-    private $pdo;
+    private $link;
     const TABLE = 'users';
-    const DATABASE = 'users.db';
 
     public function connect()
     {
-        $this->pdo = new PDO('mysql:host=localhost;dbname=' . $this::DATABASE, 'root', '');
-        return $this->pdo;
+        $host = "localhost";
+        $database = "db";
+        $user = "root";
+        $password = "";
+
+        $this->link = new PDO('mysql:host=localhost;dbname=db', 'root', '');
     }
 
     public function createTable()
     {
-        $this->pdo->query("CREATE TABLE IF NOT EXISTS" . $this::TABLE . "(
-        id INTEGER PRIMARY KEY AUTO_INCREMENT,
-        name TEXT,
-        phone TEXT,
-        data TEXT
-        )");
+        $users = "CREATE TABLE IF NOT EXISTS users (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            cookie_id VARCHAR(255) NOT NULL
+            )";
+
+        $form_data = "CREATE TABLE IF NOT EXISTS form_data (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            user_id VARCHAR(255) NOT NULL,
+            file_link VARCHAR(255) NOT NULL
+            )";
+
+        if (!$this->link->query($users) || !$this->link->query($form_data))
+            echo "Ошибка создания таблицы: ";
     }
 
-    public function createRecord()
+    public function insertRecord($data, $fileDir)
     {
-        $date = date(time());
-        $sql = "INSERT INTO" . $this::TABLE . "
-        (name, phone,date)
-        VALUES (:name,:phone," . $date . ")";
-        $request = $this->pdo->prepare($sql);
-        if ($request) {
-            $request->execute($date);
+        $sql = "SELECT cookie_id FROM users";
+        $res = $this->link->query($sql);
+        $result = array();
+        while ($row = $res->fetch())
+            $result[] = $row[0];
+
+        $bool = true;
+        foreach ($result as $userId) {
+            if ($userId == $data["PHPSESSID"]) {
+                $bool = false;
+                break;
+            }
         }
-        return $this->pdo->lastInsertId();
+
+        if ($bool) {
+            $sql = "INSERT INTO `users` (`cookie_id`) VALUES('" . $data['PHPSESSID'] . "')";
+            $this->link->query($sql);
+        }
+
+        $sql = "INSERT INTO `form_data` (`user_id`,`file_link`) VALUES('" . $data['PHPSESSID'] . "','" . $fileDir . "')";
+        $this->link->query($sql);
     }
 
-    public function showRecords()
+    public function showRecords($table)
     {
-        $sql = "SELECT * FROM" . $this::TABLE . " ORDER by id DESC";
-        $request = $this->pdo->prepare($sql);
+        $sql = "SELECT * FROM " . $table . " ORDER by id DESC";
+        $request = $this->link->prepare($sql);
         if ($request) {
             $request->execute();
         }

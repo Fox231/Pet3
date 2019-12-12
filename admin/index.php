@@ -1,8 +1,14 @@
 <?php
 include('../database.php');
 
-$pdo = new dataBase;
-$pdo->connect();
-foreach ($pdo->showRecords() as $row) {
-    echo $row['id'] . ': ' . $row['name'] . ' - ' . $row['phone'] .  'Дата' . date('d.m.Y H:i:s', $row['date']) . '<br>';
+$database = new Datacontroller;
+$link = $database->connect();
+
+$table = "users";
+foreach ($database->showRecords($table) as $row) {
+    print_r('id: ' . $row['id'] . ' ' . 'userID: ' . $row['cookie_id'] . '<br>');
+}
+$table = "form_data";
+foreach ($database->showRecords($table) as $row) {
+    print_r('id: ' . $row['id'] . ' ' . 'userID: ' . $row['user_id'] . 'file directory: ' . $row['file_link'] . '<br>');
 }
