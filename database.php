@@ -6,11 +6,6 @@ class Datacontroller
 
     public function connect()
     {
-        $host = "localhost";
-        $database = "db";
-        $user = "root";
-        $password = "";
-
         $this->link = new PDO('mysql:host=localhost;dbname=db', 'root', '');
     }
 
