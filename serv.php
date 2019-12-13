@@ -12,6 +12,7 @@ if (validate($_POST)) {
         $database = new Datacontroller;
         $database->connect();
         $database->createTable();
+        var_dump($_FILES);
         foreach ($_FILES as $file) {
             $fileDir = saveFile($file);
             $database->insertRecord($_COOKIE, $fileDir);
@@ -19,12 +20,12 @@ if (validate($_POST)) {
         $Mail = new Mail;
         $Mail->send($_POST, $_COOKIE, $fileDir);
 
-        header('location: /cinema/thanks.php?name=' . $_POST['name'] . 'id=' . $id);
+        // header('location: /cinema/thanks.php?name=' . $_POST['name'] . 'id=' . $id);
     } else {
-        header('location: /cinema/?error_name=Нет файла');
+        // header('location: /cinema/?error_name=Нет файла');
     }
 } else {
-    header('location: /cinema/?error_name=Не заполнено имя');
+    // header('location: /cinema/?error_name=Не заполнено имя');
 }
 
 function saveFile($file)
@@ -47,7 +48,6 @@ function validate($data)
 
 class Mail
 {
-    const MAILTO = 'fowomax338@swift-mail.net';
     public function send($data, $cookie, $fileDir)
     {
         $mail = new PHPMailer(true);

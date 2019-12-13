@@ -43,6 +43,47 @@ jQuery(($) => {
             document.getElementById('choose_city').style.display = 'none'
         })
     })
+    $('.input-required').on('focus', function () {
+        $(this).next('.input-error').remove()
+    })
+
+    // let file_api = (window.File && window.FileReader && window.FileList && window.Bloob) ? true : false;
+    // inp = $('#file1'),
+    //     lbl = $('#file-label')
+    // inp.on('cange', function () {
+    //     let filename
+    //     if (file_api) {
+    //         filename = inp[0].files[0].name;
+    //     } else { filename = inp.val().replace("C:\\fakepath\\", '') }
+    //     if (!filename.length) return
+    //     lbl.html(filename)
+    // })
+
+    $('.ajax-form').on('submit', function (e) {
+        e.preventDefault()
+        let form = $(this)
+        let data = form.serialize()
+        filled = true;
+        form.find('.input-required').each(function () {
+            if ($(this).val()) {
+                $(this).after('<p class="input-error">Поле обязательно для заполнения</p>')
+                filled = false
+            }
+        })
+        if (filled) {
+            $.ajax({
+                url: 'serv.php',
+                data: data,
+                method: 'post',
+                success: function (msg) {
+                    console.log(msg)
+                },
+                error: function (msg) {
+                    alert('Отправка не удалась. Ошибка:<br>' + msg)
+                }
+            })
+        }
+    })
 })
 
 jQuery(document).ready(($) => {

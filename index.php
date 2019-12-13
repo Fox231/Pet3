@@ -1253,10 +1253,10 @@
     <div id="modalPresent">
         <div class="modal">
             <button id="closeModalPresent">X</button>
-            <form enctype="multipart/form-data" action="serv.php" method="POST">
+            <form class="ajax-form">
                 <div class="modal__form">
                     <div class="input-wrap">
-                        <input type="text" placeholder="Имя*" id="guest-name" class="input-text" name="name" value=" <?php echo isset($_COOKIE['name']) ? $_COOKIE['name'] : '' ?>">
+                        <input type="text" placeholder="Имя*" id="guest-name" class="input-text" required name="name" value=" <?php echo isset($_COOKIE['name']) ? $_COOKIE['name'] : '' ?>">
                         <?php if (isset($_GET['error_name']) && $_GET['error_name']) { ?>
                             <p><?php echo $_GET['error_name']; ?></p>
                         <?php } ?>
@@ -1283,16 +1283,16 @@
                     </div>
                     <div class="input-wrap">
                         <textarea placeholder="Комментарий" name="comment" class="input-text input-textarea"></textarea>
-                    </div>
-                    <div class="input-wrap">
-                        <input type="checkbox" id="checkbox1" class="input-checkbox" name="agree">
+                    </div>-->
+                    <!-- <div class="input-wrap">
+                        <input type="checkbox" id="checkbox1" class="input-checkbox input-required" required name="agree" value="">
                         <label for="checkbox1"><i class="icon icon-check" multiple title="check"></i> Я согласен на обработку
                             персональных данных</label>
                     </div> -->
                     <div class="input-wrap">
                         <div class="input-file-wrap">
                             <input type="file" id="file1" class="input-file" name="file">
-                            <label for="file1">Загрузить файл</label>
+                            <label for="file1" id="file-label">Загрузить файл</label>
                         </div>
                     </div>
                     <!-- <div class="input-wrap">
@@ -1302,7 +1302,7 @@
                         <a href="#" class="input-minus"><i class="icon icon-cross-alt" title="cross-alt"></i></a>
                     </div> -->
                     <div class="input-wrap">
-                        <button id="sendForm" class="button1">Отправить</button>
+                        <button type="submit" id="sendForm" class="button1">Отправить</button>
                     </div>
                 </div>
             </form>
