@@ -62,7 +62,7 @@ jQuery(($) => {
     $('.ajax-form').on('submit', function (e) {
         e.preventDefault()
         let form = $(this)
-        let data = form.serialize()
+        // let data = form.serialize()
         filled = true;
         form.find('.input-required').each(function () {
             if ($(this).val()) {
@@ -71,12 +71,20 @@ jQuery(($) => {
             }
         })
         if (filled) {
+            let data = new FormData();
+            data.append('file', $('#file1').prop('files')[0]);
+            data.append('name', $('#guest-name').val());
+            data.append('phone', $('#guest-phone').val());
             $.ajax({
                 url: 'serv.php',
                 data: data,
                 method: 'post',
+                cache: false,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
                 success: function (msg) {
-                    console.log(msg)
+                    alert('Все отправлено')
                 },
                 error: function (msg) {
                     alert('Отправка не удалась. Ошибка:<br>' + msg)

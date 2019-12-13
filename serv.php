@@ -12,14 +12,16 @@ if (validate($_POST)) {
         $database = new Datacontroller;
         $database->connect();
         $database->createTable();
-        var_dump($_FILES);
         foreach ($_FILES as $file) {
             $fileDir = saveFile($file);
             $database->insertRecord($_COOKIE, $fileDir);
         }
         $Mail = new Mail;
         $Mail->send($_POST, $_COOKIE, $fileDir);
-
+        // Отправляем статус 200 для ajax
+        http_response_code();
+        header("HTTP/1.0 200 OK");
+        echo json_encode(array());
         // header('location: /cinema/thanks.php?name=' . $_POST['name'] . 'id=' . $id);
     } else {
         // header('location: /cinema/?error_name=Нет файла');

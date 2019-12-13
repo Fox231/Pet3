@@ -1262,7 +1262,7 @@
                         <?php } ?>
                     </div>
                     <div class="input-wrap">
-                        <input type="tel" placeholder="Телефон*" id="guest-name" class="input-text" name="phone" value=" <?php echo isset($_COOKIE['phone']) ? $_COOKIE['phone'] : '' ?>">
+                        <input type="tel" placeholder="Телефон*" id="guest-phone" class="input-text" name="phone" value=" <?php echo isset($_COOKIE['phone']) ? $_COOKIE['phone'] : '' ?>">
                     </div>
                     <!-- <div class="input-wrap">
                         <select name="cinema" id="guest_select" class="input-text input-select">
