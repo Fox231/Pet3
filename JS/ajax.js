@@ -47,13 +47,13 @@ jQuery(($) => {
         $(this).next('.input-error').remove()
     })
 
-    // let file_api = (window.File && window.FileReader && window.FileList && window.Bloob) ? true : false;
+    // let file_api = (window.File && window.FileReader && window.FileList && window.Bloob) ? true : false
     // inp = $('#file1'),
     //     lbl = $('#file-label')
     // inp.on('cange', function () {
     //     let filename
     //     if (file_api) {
-    //         filename = inp[0].files[0].name;
+    //         filename = inp[0].files[0].name
     //     } else { filename = inp.val().replace("C:\\fakepath\\", '') }
     //     if (!filename.length) return
     //     lbl.html(filename)
@@ -63,7 +63,7 @@ jQuery(($) => {
         e.preventDefault()
         let form = $(this)
         // let data = form.serialize()
-        filled = true;
+        filled = true
         form.find('.input-required').each(function () {
             if ($(this).val()) {
                 $(this).after('<p class="input-error">Поле обязательно для заполнения</p>')
@@ -71,10 +71,10 @@ jQuery(($) => {
             }
         })
         if (filled) {
-            let data = new FormData();
-            data.append('file', $('#file1').prop('files')[0]);
-            data.append('name', $('#guest-name').val());
-            data.append('phone', $('#guest-phone').val());
+            let data = new FormData()
+            data.append('file', $('#file1').prop('files')[0])
+            data.append('name', $('#guest-name').val())
+            data.append('phone', $('#guest-phone').val())
             $.ajax({
                 url: 'serv.php',
                 data: data,
@@ -84,7 +84,7 @@ jQuery(($) => {
                 processData: false,
                 contentType: false,
                 success: function (msg) {
-                    alert('Все отправлено')
+                    alert('Спасибо, ' + msg.name + '! Заявка успешно отправлена. Ваш номер заявки: ' + msg.id)
                 },
                 error: function (msg) {
                     alert('Отправка не удалась. Ошибка:<br>' + msg)

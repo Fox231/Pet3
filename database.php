@@ -53,11 +53,19 @@ class Datacontroller
 
     public function showRecords($table)
     {
-        $sql = "SELECT * FROM " . $table . " ORDER by id DESC";
+        $sql = "SELECT * FROM " . $table . "ORDER by id DESC";
         $request = $this->link->prepare($sql);
         if ($request) {
             $request->execute();
         }
         return $request;
+    }
+
+    public function lastIDrequest()
+    {
+        foreach ($this->link->query("SELECT `id` FROM `form_data`") as $row) {
+            $id = $row['id'];
+        }
+        return $id;
     }
 }

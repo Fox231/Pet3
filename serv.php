@@ -16,12 +16,20 @@ if (validate($_POST)) {
             $fileDir = saveFile($file);
             $database->insertRecord($_COOKIE, $fileDir);
         }
+
         $Mail = new Mail;
         $Mail->send($_POST, $_COOKIE, $fileDir);
+
+        $result = [
+            'name' => $_POST['name'],
+            'id' => $database->lastIDrequest()
+        ];
+
         // Отправляем статус 200 для ajax
         http_response_code();
         header("HTTP/1.0 200 OK");
-        echo json_encode(array());
+        echo json_encode($result);
+
         // header('location: /cinema/thanks.php?name=' . $_POST['name'] . 'id=' . $id);
     } else {
         // header('location: /cinema/?error_name=Нет файла');
